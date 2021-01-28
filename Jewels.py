@@ -115,6 +115,43 @@ class Jewels():
                         break
                 if found:
                     break
+        #wmake4
+        if not found and self.N != 5:
+            for h in range(self.N):
+                for w in range(self.N - 2):
+                    if w - 1 >= 0 and self.grid[h][w + 2] == self.grid[h][w + 1] and len(index[self.grid[h][w + 2]]) >= 4:
+                        want_c = self.grid[h][w + 2]
+                        used = [[h, w - 1], [h, w + 1], [h, w + 2]]
+                        for pos_index in index[want_c]:
+                            if pos_index not in used:
+                                self.swap(h, w - 1, pos_index[0], pos_index[1])
+                                break
+                        found = True
+                    if not found and w + 3 < self.N and self.grid[h][w] == self.grid[h][w + 1] and len(index[self.grid[h][w]]) >= 4:
+                        want_c = self.grid[h][w]
+                        used = [[h, w], [h, w + 1], [h, w + 3]]
+                        for pos_index in index[want_c]:
+                            if pos_index not in used:
+                                self.swap(h, w + 3, pos_index[0], pos_index[1])
+                                break
+                        found = True
+                    if not found and self.grid[h][w] == self.grid[h][w + 2] and len(index[self.grid[h][w]]) >= 4:
+                        want_c = self.grid[h][w]
+                        dw = 0
+                        if w - 1 >= 0:
+                            dw = -1
+                        if w + 3 < self.N:
+                            dw = 3
+                        used = [[h, w], [h, w + 2], [h, w + dw]]
+                        for pos_index in index[want_c]:
+                            if pos_index not in used:
+                                self.swap(h, w + dw, pos_index[0], pos_index[1])
+                                break
+                        found = True
+                    if found:
+                        break
+                if found:
+                    break
         #wlen3
         if not found:
             for h in range(self.N):
