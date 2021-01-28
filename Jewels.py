@@ -148,60 +148,60 @@ class Jewels():
                 if found:
                     break
         #wlen4
-        if not found:
-            for h in range(self.N):
-                for w in range(self.N - 3):
-                    # print(h, w)
-                    if (self.grid[h][w] == self.grid[h][w + 1] and self.grid[h][w] == self.grid[h][w + 3]) and len(index[self.grid[h][w]]) >= 4:
-                        want_c = self.grid[h][w]
-                        used = [[h, w], [h, w + 1], [h, w + 3]]
-                        for pos_index in index[want_c]:
-                            if pos_index not in used:
-                                self.swap(h, w + 2, pos_index[0], pos_index[1])
-                                found = True
-                                break
-                    elif (self.grid[h][w] == self.grid[h][w + 2] and self.grid[h][w] == self.grid[h][w + 3]) and len(index[self.grid[h][w]]) >= 4:
-                        want_c = self.grid[h][w]
-                        used = [[h, w], [h, w + 2], [h, w + 3]]
-                        for pos_index in index[want_c]:
-                            if pos_index not in used:
-                                self.swap(h, w + 1, pos_index[0], pos_index[1])
-                                found = True
-                                break
-                    if found:
-                        break
-                if found:
-                    break
+        # if not found:
+        #     for h in range(self.N):
+        #         for w in range(self.N - 3):
+        #             # print(h, w)
+        #             if (self.grid[h][w] == self.grid[h][w + 1] and self.grid[h][w] == self.grid[h][w + 3]) and len(index[self.grid[h][w]]) >= 4:
+        #                 want_c = self.grid[h][w]
+        #                 used = [[h, w], [h, w + 1], [h, w + 3]]
+        #                 for pos_index in index[want_c]:
+        #                     if pos_index not in used:
+        #                         self.swap(h, w + 2, pos_index[0], pos_index[1])
+        #                         found = True
+        #                         break
+        #             elif (self.grid[h][w] == self.grid[h][w + 2] and self.grid[h][w] == self.grid[h][w + 3]) and len(index[self.grid[h][w]]) >= 4:
+        #                 want_c = self.grid[h][w]
+        #                 used = [[h, w], [h, w + 2], [h, w + 3]]
+        #                 for pos_index in index[want_c]:
+        #                     if pos_index not in used:
+        #                         self.swap(h, w + 1, pos_index[0], pos_index[1])
+        #                         found = True
+        #                         break
+        #             if found:
+        #                 break
+        #         if found:
+        #             break
         #hlen4
-        if not found:
-            for h in range(self.N - 3):
-                for w in range(self.N):
-                    # print(h, w)
-                    if (self.grid[h][w] == self.grid[h + 1][w] and self.grid[h][w] == self.grid[h + 3][w]) and len(index[self.grid[h][w]]) >= 4:
-                        want_c = self.grid[h][w]
-                        used = [[h, w], [h + 1, w], [h + 3, w]]
-                        for pos_index in index[want_c]:
-                            if pos_index not in used:
-                                self.swap(h + 2, w, pos_index[0], pos_index[1])
-                                found = True
-                                break
-                    elif (self.grid[h][w] == self.grid[h + 2][w] and self.grid[h][w] == self.grid[h + 3][w]) and len(index[self.grid[h][w]]) >= 4:
-                        want_c = self.grid[h][w]
-                        used = [[h, w], [h + 2, w], [h + 3, w]]
-                        for pos_index in index[want_c]:
-                            if pos_index not in used:
-                                self.swap(h + 1, w, pos_index[0], pos_index[1])
-                                found = True
-                                break
-                    if found:
-                        break
-                if found:
-                    break
+        # if not found:
+        #     for h in range(self.N - 3):
+        #         for w in range(self.N):
+        #             # print(h, w)
+        #             if (self.grid[h][w] == self.grid[h + 1][w] and self.grid[h][w] == self.grid[h + 3][w]) and len(index[self.grid[h][w]]) >= 4:
+        #                 want_c = self.grid[h][w]
+        #                 used = [[h, w], [h + 1, w], [h + 3, w]]
+        #                 for pos_index in index[want_c]:
+        #                     if pos_index not in used:
+        #                         self.swap(h + 2, w, pos_index[0], pos_index[1])
+        #                         found = True
+        #                         break
+        #             elif (self.grid[h][w] == self.grid[h + 2][w] and self.grid[h][w] == self.grid[h + 3][w]) and len(index[self.grid[h][w]]) >= 4:
+        #                 want_c = self.grid[h][w]
+        #                 used = [[h, w], [h + 2, w], [h + 3, w]]
+        #                 for pos_index in index[want_c]:
+        #                     if pos_index not in used:
+        #                         self.swap(h + 1, w, pos_index[0], pos_index[1])
+        #                         found = True
+        #                         break
+        #             if found:
+        #                 break
+        #         if found:
+        #             break
         #wmake4
         if not found:
             for h in range(self.N):
                 for w in range(self.N - 2):
-                    if w - 1 >= 0 and self.grid[h][w + 2] == self.grid[h][w + 1] and len(index[self.grid[h][w + 2]]) >= 4:
+                    if w - 1 >= 0 and self.grid[h][w + 2] == self.grid[h][w + 1] and len(index[self.grid[h][w + 2]]) >= 5 and self.grid[h][w - 1] != self.grid[h][w + 2]:
                         want_c = self.grid[h][w + 2]
                         used = [[h, w - 1], [h, w + 1], [h, w + 2]]
                         for pos_index in index[want_c]:
@@ -209,7 +209,7 @@ class Jewels():
                                 self.swap(h, w - 1, pos_index[0], pos_index[1])
                                 found = True
                                 break
-                    if not found and w + 3 < self.N and self.grid[h][w] == self.grid[h][w + 1] and len(index[self.grid[h][w]]) >= 4:
+                    if not found and w + 3 < self.N and self.grid[h][w] == self.grid[h][w + 1] and len(index[self.grid[h][w]]) >= 5 and self.grid[h][w + 3] != self.grid[h][w]:
                         want_c = self.grid[h][w]
                         used = [[h, w], [h, w + 1], [h, w + 3]]
                         for pos_index in index[want_c]:
@@ -217,7 +217,7 @@ class Jewels():
                                 self.swap(h, w + 3, pos_index[0], pos_index[1])
                                 found = True
                                 break
-                    if not found and self.grid[h][w] == self.grid[h][w + 2] and len(index[self.grid[h][w]]) >= 4:
+                    if not found and self.grid[h][w] == self.grid[h][w + 2] and len(index[self.grid[h][w]]) >= 5:
                         want_c = self.grid[h][w]
                         dw = 0
                         if w - 1 >= 0:
@@ -226,7 +226,7 @@ class Jewels():
                             dw = 3
                         used = [[h, w], [h, w + 2], [h, w + dw]]
                         for pos_index in index[want_c]:
-                            if pos_index not in used:
+                            if pos_index not in used and self.grid[h][w] != self.grid[h][w + dw]:
                                 self.swap(h, w + dw, pos_index[0], pos_index[1])
                                 found = True
                                 break
@@ -238,7 +238,7 @@ class Jewels():
         if not found:
             for h in range(self.N - 2):
                 for w in range(self.N):
-                    if h - 1 >= 0 and self.grid[h + 2][w] == self.grid[h + 1][w] and len(index[self.grid[h + 2][w]]) >= 4:
+                    if h - 1 >= 0 and self.grid[h + 2][w] == self.grid[h + 1][w] and len(index[self.grid[h + 2][w]]) >= 5 and self.grid[h + 1][w] != self.grid[h - 1][w]:
                         want_c = self.grid[h + 2][w]
                         used = [[h - 1, w], [h + 1, w], [h + 2, w]]
                         for pos_index in index[want_c]:
@@ -246,7 +246,7 @@ class Jewels():
                                 self.swap(h - 1, w, pos_index[0], pos_index[1])
                                 found = True
                                 break
-                    if not found and h + 3 < self.N and self.grid[h][w] == self.grid[h + 1][w] and len(index[self.grid[h][w]]) >= 4:
+                    if not found and h + 3 < self.N and self.grid[h][w] == self.grid[h + 1][w] and len(index[self.grid[h][w]]) >= 5 and self.grid[h][w] != self.grid[h + 3][w]:
                         want_c = self.grid[h][w]
                         used = [[h, w], [h + 1, w], [h + 3, w]]
                         for pos_index in index[want_c]:
@@ -254,7 +254,7 @@ class Jewels():
                                 self.swap(h + 3, w, pos_index[0], pos_index[1])
                                 found = True
                                 break
-                    if not found and self.grid[h][w] == self.grid[h + 2][w] and len(index[self.grid[h][w]]) >= 4:
+                    if not found and self.grid[h][w] == self.grid[h + 2][w] and len(index[self.grid[h][w]]) >= 5:
                         want_c = self.grid[h][w]
                         dh = 0
                         if h - 1 >= 0:
@@ -263,7 +263,7 @@ class Jewels():
                             dh = 3
                         used = [[h, w], [h + 2, w], [h + dh, w]]
                         for pos_index in index[want_c]:
-                            if pos_index not in used:
+                            if pos_index not in used and self.grid[h][w] != self.grid[h + dh][w]:
                                 self.swap(h + dh, w, pos_index[0], pos_index[1])
                                 found = True
                                 break
@@ -272,63 +272,63 @@ class Jewels():
                 if found:
                     break
         #wlen3
-        if not found:
-            for h in range(self.N):
-                for w in range(self.N - 2):
-                    # print(h, w)
-                    if self.grid[h][w + 2] == self.grid[h][w + 1] and len(index[self.grid[h][w + 2]]) >= 3:
-                        want_c = self.grid[h][w + 2]
-                        used = [[h, w + 2], [h, w + 1]]
-                        for pos_index in index[want_c]:
-                            if pos_index not in used:
-                                self.swap(h, w, pos_index[0], pos_index[1])
-                                found = True
-                                break
-                    elif self.grid[h][w] == self.grid[h][w + 1] and len(index[self.grid[h][w]]) >= 3:
-                        want_c = self.grid[h][w]
-                        used = [[h, w], [h, w + 1]]
-                        for pos_index in index[want_c]:
-                            if pos_index not in used:
-                                self.swap(h, w + 2, pos_index[0], pos_index[1])
-                                found = True
-                                break
-                    elif self.grid[h][w] == self.grid[h][w + 2] and len(index[self.grid[h][w]]) >= 3:
-                        want_c = self.grid[h][w]
-                        used = [[h, w], [h, w + 2]]
-                        for pos_index in index[want_c]:
-                            if pos_index not in used:
-                                self.swap(h, w + 1, pos_index[0], pos_index[1])
-                                found = True
-                                break
-                    if found:
-                        break
-                if found:
-                    break
+        # if not found:
+        #     for h in range(self.N):
+        #         for w in range(self.N - 2):
+        #             # print(h, w)
+        #             if self.grid[h][w + 2] == self.grid[h][w + 1] and len(index[self.grid[h][w + 2]]) >= 3:
+        #                 want_c = self.grid[h][w + 2]
+        #                 used = [[h, w + 2], [h, w + 1]]
+        #                 for pos_index in index[want_c]:
+        #                     if pos_index not in used:
+        #                         self.swap(h, w, pos_index[0], pos_index[1])
+        #                         found = True
+        #                         break
+        #             elif self.grid[h][w] == self.grid[h][w + 1] and len(index[self.grid[h][w]]) >= 3:
+        #                 want_c = self.grid[h][w]
+        #                 used = [[h, w], [h, w + 1]]
+        #                 for pos_index in index[want_c]:
+        #                     if pos_index not in used:
+        #                         self.swap(h, w + 2, pos_index[0], pos_index[1])
+        #                         found = True
+        #                         break
+        #             elif self.grid[h][w] == self.grid[h][w + 2] and len(index[self.grid[h][w]]) >= 3:
+        #                 want_c = self.grid[h][w]
+        #                 used = [[h, w], [h, w + 2]]
+        #                 for pos_index in index[want_c]:
+        #                     if pos_index not in used:
+        #                         self.swap(h, w + 1, pos_index[0], pos_index[1])
+        #                         found = True
+        #                         break
+        #             if found:
+        #                 break
+        #         if found:
+        #             break
         #hlen3
-        if not found:
-            for h in range(self.N - 2):
-                for w in range(self.N):
-                    # print(h, w)
-                    if self.grid[h][w] == self.grid[h + 1][w] and len(index[self.grid[h][w]]) >= 3:
-                        want_c = self.grid[h][w]
-                        used = [[h, w], [h + 1, w]]
-                        for pos_index in index[want_c]:
-                            if pos_index not in used:
-                                self.swap(h + 2, w, pos_index[0], pos_index[1])
-                                found = True
-                                break
-                    elif self.grid[h][w] == self.grid[h + 2][w] and len(index[self.grid[h][w]]) >= 3:
-                        want_c = self.grid[h][w]
-                        used = [[h, w], [h + 2, w]]
-                        for pos_index in index[want_c]:
-                            if pos_index not in used:
-                                self.swap(h, w + 1, pos_index[0], pos_index[1])
-                                found = True
-                                break
-                    if found:
-                        break
-                if found:
-                    break
+        # if not found:
+        #     for h in range(self.N - 2):
+        #         for w in range(self.N):
+        #             # print(h, w)
+        #             if self.grid[h][w] == self.grid[h + 1][w] and len(index[self.grid[h][w]]) >= 3:
+        #                 want_c = self.grid[h][w]
+        #                 used = [[h, w], [h + 1, w]]
+        #                 for pos_index in index[want_c]:
+        #                     if pos_index not in used:
+        #                         self.swap(h + 2, w, pos_index[0], pos_index[1])
+        #                         found = True
+        #                         break
+        #             elif self.grid[h][w] == self.grid[h + 2][w] and len(index[self.grid[h][w]]) >= 3:
+        #                 want_c = self.grid[h][w]
+        #                 used = [[h, w], [h + 2, w]]
+        #                 for pos_index in index[want_c]:
+        #                     if pos_index not in used:
+        #                         self.swap(h, w + 1, pos_index[0], pos_index[1])
+        #                         found = True
+        #                         break
+        #             if found:
+        #                 break
+        #         if found:
+        #             break
         #len0
         if not found:
             for h in range(self.N // 2):
