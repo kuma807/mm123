@@ -1,1 +1,5 @@
-630602.0
+all grid gready, 611859.0
+make4,608456
+make5, 610564.0
+only make5, 630602.0
+make_want, 856032.0
