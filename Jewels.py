@@ -9,17 +9,51 @@ class Jewels():
         self.want_grid = [[-1 for i in range(N)] for j in range(N)]
         self.stater_index = []
         self.holder_index = []
-        temp = [[1, 1, 0, 0, 1, 0, 1, 1], [2, 2, 1, 1, 0, 1, 2, 2], [3, 3, 2, 2, 0, 2, 3, 3], [4, 4, 3, 3, 1, 3, 0, -1], [6, 6, 4, 5, 2, -1, -1, -1], [-1, -1, 5, 7, 3, -1, -1, -1], [-1, -1, 6, -1, 5, -1, -1, -1], [-1, -1, 7, -1, 7, -1, -1, -1]]
+        temp = [[1, 1, 0, 0, 1, 0, 0, 1, 1], [2, 2, 1, 1, 0, 1, 1, 2, 2], [3, 3, 2, 2, 0, 2, 2, 3, 3], [-1, -1, 3, 3, 1, 3, 3, -1, -1], [-1, -1, -1, -1, 2, -1, -1, -1, -1], [-1, -1, -1, -1, 3, -1, -1, -1, -1], [-1, -1, -1, -1, -1, -1, -1, -1, -1], [-1, -1, 7, -1, -1, -1, -1, -1, -1], [-1, -1, -1, -1, -1, -1, -1, -1, -1]]
         if N == 8:
             self.want_grid = [[1, 1, 0, 0, 1, 0, 1, 1], [2, 2, 1, 1, 0, 1, 2, 2], [3, 3, 2, 2, 0, 2, 3, 3], [4, 4, 3, 3, 1, 3, 0, -1], [6, 6, 4, 5, 2, -1, -1, -1], [-1, -1, 5, 7, 3, -1, -1, -1], [-1, -1, 6, -1, 5, -1, -1, -1], [-1, -1, 7, -1, 7, -1, -1, -1]]
             self.stater_index = [0, 4]
             self.holder_index = [3, 6]
-        else:
-            for i in range(8):
-                for j in range(8):
-                    self.want_grid[i][j] = temp[i][j]
+        elif N == 9:
+            self.want_grid = [[1, 1, 0, 0, 1, 0, 0, 1, 1], [2, 2, 1, 1, 0, 1, 1, 2, 2], [3, 3, 2, 2, 0, 2, 2, 3, 3], [4, 4, 3, 3, 1, 3, 3, 0, -1], [6, 6, 4, 5, 2, 4, -1, -1, -1], [8, 8, 5, 7, 3, 5, -1, -1, -1], [-1, -1, 6, -1, 5, -1, -1, -1, -1], [-1, -1, 7, -1, 7, -1, -1, -1, -1], [-1, -1, 8, -1, -1, -1, -1, -1, -1]]
             self.stater_index = [0, 4]
-            self.holder_index = [3, 6]
+            self.holder_index = [3, 7]
+            # print(self.want_grid)
+        else:
+            for i in range(len(temp)):
+                for j in range(len(temp[i])):
+                    self.want_grid[i][j] = temp[i][j]
+            hight = [N for _ in range(N)]
+            for w in range(N):
+                for h in range(N):
+                    if self.want_grid[h][w] == -1:
+                      hight[w] = h
+                      break
+            cnt = 4
+            for i in range((N - 9) // 2):
+                for j in range(9):
+                    self.want_grid[hight[j]][j] = cnt % C
+                    hight[j] += 1
+                cnt += 1
+            while True:
+                if hight[2] == N:
+                    break
+                for i in range(0, 3):
+                    self.want_grid[hight[i]][i] = cnt % C
+                    hight[i] += 1
+                cnt += 1
+                if hight[2] == N:
+                    break
+                for i in range(2, 5):
+                    self.want_grid[hight[i]][i] = cnt % C
+                    hight[i] += 1
+                self.want_grid[hight[5]][5] = (cnt + C - 1) % C
+                hight[5] += 1
+                cnt += 1
+            self.want_grid[0][9] = 0
+            self.stater_index = [0, 4]
+            self.holder_index = [0, 9]
+            # print(self.want_grid)
 
     def swap(self, h1, w1, h2, w2):
         self.grid[h1][w1], self.grid[h2][w2] = self.grid[h2][w2], self.grid[h1][w1]
