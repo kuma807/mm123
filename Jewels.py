@@ -50,9 +50,9 @@ class Jewels():
                 self.want_grid[hight[5]][5] = (cnt + C - 1) % C
                 hight[5] += 1
                 cnt += 1
-            self.want_grid[0][9] = 0
+            self.want_grid[1][9] = 0
             self.stater_index = [0, 4]
-            self.holder_index = [0, 9]
+            self.holder_index = [1, 9]
             # print(self.want_grid)
 
     def swap(self, h1, w1, h2, w2):
@@ -116,6 +116,7 @@ class Jewels():
                 index[self.grid[i][j]].append([i, j])
         found = False
         done = True
+        temp = False
         for h in range(self.N):
             for w in range(self.N):
                 if (self.want_grid[h][w] != -1 and self.grid[h][w] == (self.want_grid[h][w] % self.C)) or self.want_grid[h][w] == -1:
@@ -128,11 +129,16 @@ class Jewels():
                         self.swap(pos_h, pos_w, h, w)
                         found = True
                         break
+                temp = True
+                break
                 if found:
                     break
+            if temp:
+                break
             if found:
                 break
         if not found and not done:
+            # print('hi')
             self.gridy()
         if not found and done:
             self.swap(self.stater_index[0], self.stater_index[1], self.holder_index[0], self.holder_index[1])
