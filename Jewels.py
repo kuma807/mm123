@@ -19,6 +19,26 @@ class Jewels():
             self.stater_index = [0, 4]
             self.holder_index = [3, 7]
             # print(self.want_grid)
+        elif N == 12:
+            self.want_grid = [[2, 3, 2, 2, 3, 2, 2, 3, 2, 2, 3, 2, 2], [0, 4, 4, 0, 4, 4, 0, 4, 4, 0, 4, 4, 0], [0, 4, 4, 0, 4, 4, 0, 4, 4, 0, 4, 4, 0], [1, 1, 3, 1, 1, 3, 1, 3, 1, 1, 3, 1, 1], [0, 3, 2, 2, 0, 2, 0, 2, 0, 2, 2, -1, 0], [4, 3, 3, 0, 4, 4, 3, 4, 4, 0, 3, -1, 4], [4, 2, 3, 4, 0, 3, 0, 3, 0, 4, 3, -1, 4], [-1, -1, 1, 4, 0, 3, 0, 3, 0, 4, 1, -1, -1], [-1, -1, -1, -1, 2, 1, 2, 1, 2, -1, 3, -1, -1], [-1, -1, -1, -1, 3, 4, 0, 3, -1, -1, 3, -1, -1], [-1, -1, -1, -1, 3, -1, 4, 3, -1, -1, 2, -1, -1], [-1, -1, -1, -1, 2, -1, 4, 2, -1, -1, -1, -1, -1]]
+            self.stater_index = [5, 6]
+            self.holder_index = [9, 5]
+        elif N == 13:
+            self.want_grid = [[2, 3, 2, 2, 3, 2, 2, 3, 2, 2, 3, 2, 2], [2, 3, 2, 2, 3, 2, 2, 3, 2, 2, 3, 2, 2], [0, 4, 4, 0, 4, 4, 0, 4, 4, 0, 4, 4, 0], [0, 4, 4, 0, 4, 4, 0, 4, 4, 0, 4, 4, 0], [1, 1, 3, 1, 1, 3, 1, 3, 1, 1, 3, 1, 1], [0, 3, 2, 2, 0, 2, 0, 2, 0, 2, 2, -1, 0], [4, 2, 3, 0, 4, 4, 3, 4, 4, 0, 3, -1, 4], [4, 2, 3, 4, 0, 3, 0, 3, 0, 4, 3, -1, 4], [-1, -1, 1, 4, 0, 3, 0, 3, 0, 4, 1, -1, -1], [-1, -1, -1, -1, 2, 1, 2, 1, 2, -1, 3, -1, -1], [-1, -1, -1, -1, 3, 4, 0, 3, -1, -1, 2, -1, -1], [-1, -1, -1, -1, 2, -1, 4, 2, -1, -1, 2, -1, -1], [-1, -1, -1, -1, 2, -1, 4, 2, -1, -1, -1, -1, -1]]
+            self.stater_index = [6, 6]
+            self.holder_index = [10, 5]
+        elif N == 14:
+            self.want_grid = [[2, 3, 2, 2, 3, 2, 2, 3, 2, 2, 3, 2, 2, 3], [2, 3, 2, 2, 3, 2, 2, 3, 2, 2, 3, 2, 2, 3], [0, 4, 4, 0, 4, 4, 0, 4, 4, 0, 4, 4, 0, 4], [0, 4, 4, 0, 4, 4, 0, 4, 4, 0, 4, 4, 0, 4], [1, 1, 3, 1, 1, 3, 1, 3, 1, 1, 3, 1, 1, 3], [0, 3, 2, 2, 0, 2, 0, 2, 0, 2, 2, -1, 0, 2], [4, 2, 3, 0, 4, 4, 3, 4, 4, 0, 3, -1, 4, 2], [4, 2, 3, 4, 0, 3, 0, 3, 0, 4, 3, -1, 4, -1], [-1, -1, 1, 4, 0, 3, 0, 3, 0, 4, 1, -1, -1, -1], [-1, -1, -1, -1, 2, 1, 2, 1, 2, -1, 3, -1, -1, -1], [-1, -1, -1, -1, 3, -1, 0, 3, -1, -1, 2, -1, -1, -1], [-1, -1, -1, -1, 2, -1, 4, 2, -1, -1, 2, -1, -1, -1], [-1, -1, -1, -1, 2, -1, 4, 2, -1, -1, -1, -1, -1, -1], [-1, -1, -1, -1, 4, -1, -1, -1, -1, -1, -1, -1, -1, -1]]
+            self.stater_index = [6, 6]
+            self.holder_index = [13, 4]
+        elif N == 15:
+            self.want_grid = [[0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1], [0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1], [2, 2, 3, 2, 2, 3, 2, 2, 3, 2, 2, 3, 2, 2, 3], [2, 2, 3, 2, 2, 3, 2, 2, 3, 2, 2, 3, 2, 2, 3], [4, 0, 4, 4, 0, 4, 4, 0, 4, 4, 0, 4, 4, 0, 4], [4, 0, 4, 4, 0, 4, 4, 0, 4, 4, 0, 4, 4, 0, 4], [0, 1, 1, 3, 1, 1, 3, 1, 3, 1, 1, 3, 1, 1, 3], [1, 0, 3, 2, 2, 0, 2, 0, 2, 0, 2, 2, 0, 0, 2], [1, 4, 2, 3, 0, 4, 4, 3, 4, 4, 0, 3, 1, 4, 2], [4, 4, 2, 3, 4, 0, 3, 0, 3, 0, 4, 3, 1, 4, -1], [-1, -1, -1, 1, 4, 0, 3, 0, 3, 0, 4, 1, -1, -1, -1], [-1, -1, -1, 0, -1, 2, 1, 2, 1, 2, -1, 3, -1, -1, -1], [-1, -1, -1, 1, -1, 3, 0, 0, 3, 0, -1, 2, -1, -1, -1], [-1, -1, -1, 1, -1, 2, 1, 4, 2, 1, -1, 2, -1, -1, -1], [-1, -1, -1, -1, -1, 2, 1, 4, 2, 1, -1, -1, -1, -1, -1]]
+            self.stater_index = [8, 7]
+            self.holder_index = [9, 0]
+        elif N == 16:
+            self.want_grid = [[0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0], [0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0], [2, 2, 3, 2, 2, 3, 2, 2, 3, 2, 2, 3, 2, 2, 3, 2], [2, 2, 3, 2, 2, 3, 2, 2, 3, 2, 2, 3, 2, 2, 3, 2], [4, 0, 4, 4, 0, 4, 4, 0, 4, 4, 0, 4, 4, 0, 4, 4], [4, 0, 4, 4, 0, 4, 4, 0, 4, 4, 0, 4, 4, 0, 4, 4], [0, 1, 1, 3, 1, 1, 3, 1, 3, 1, 1, 3, 1, 1, 3, 0], [1, 0, 3, 2, 2, 0, 2, 0, 2, 0, 2, 2, 0, 0, 2, 1], [1, 4, 2, 3, 0, 4, 4, 3, 4, 4, 0, 3, 1, 4, 2, 1], [4, 4, 2, 3, 4, 0, 3, 0, 3, 0, 4, 3, 1, 4, -1, -1], [-1, -1, -1, 1, 4, 0, 3, 0, 3, 0, 4, 1, -1, -1, -1, -1], [-1, -1, -1, 0, -1, 2, 1, 2, 1, 2, -1, 3, -1, -1, -1, -1], [-1, -1, -1, 1, -1, 3, 0, 0, 3, 0, -1, 2, -1, -1, -1, -1], [-1, -1, -1, 1, -1, 2, 1, 4, 2, 1, -1, 2, -1, -1, -1, -1], [-1, -1, -1, -1, -1, 2, 1, 4, 2, 1, -1, -1, -1, -1, -1, -1], [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1]]
+            self.stater_index = [8, 7]
+            self.holder_index = [9, 0]
         else:
             for i in range(len(temp)):
                 for j in range(len(temp[i])):
@@ -53,54 +73,92 @@ class Jewels():
             self.want_grid[1][9] = 0
             self.stater_index = [0, 4]
             self.holder_index = [1, 9]
-            # print(self.want_grid)
+        # print(self.calc_score(self.want_grid))
+
+    def show(self, grid):
+        for i in range(len(grid)):
+            s = ""
+            for j in range(len(grid[i])):
+                if grid[len(grid) - 1 - i][j] == -1:
+                    s += " "
+                else:
+                    s += str(grid[len(grid) - 1 - i][j])
+            print(s)
+        print("-" * len(grid))
+
+    def calc_score(self, grid):
+        grid[self.stater_index[0]][self.stater_index[1]], grid[self.holder_index[0]][self.holder_index[1]] = grid[self.holder_index[0]][self.holder_index[1]], grid[self.stater_index[0]][self.stater_index[1]]
+        score = 0
+        area = 0
+        for i in range(len(grid)):
+            for j in range(len(grid[i])):
+                if grid[i][j] != -1:
+                    area += 1
+        self.show(grid)
+        combo = 0
+        while True:
+            grid, dx_score = self.update(grid)
+            self.show(grid)
+            if dx_score == 0:
+                break
+            combo += 1
+            score += dx_score
+            print(dx_score)
+        score *= combo
+        print("score", score, "area", area, "efficiency", score / area)
+        return score
 
     def swap(self, h1, w1, h2, w2):
         self.grid[h1][w1], self.grid[h2][w2] = self.grid[h2][w2], self.grid[h1][w1]
         print(str(h1)+" "+str(w1)+" "+str(h2)+" "+str(w2))
         sys.stdout.flush()
 
-    def update(self):
+    def update(self, grid):
+        score = 0
         place_del = [[False for i in range(self.N)] for j in range(self.N)]
         for i in range(self.N):
             cnt = 0
-            before = self.grid[i][0]
+            before = grid[i][0]
             for j in range(self.N):
-                if self.grid[i][j] == before and self.grid[i][j] != -1:
+                if grid[i][j] == before and grid[i][j] != -1:
                     cnt += 1
                 else:
                     if cnt >= 3:
+                        score += (cnt - 2) ** 2
                         for k in range(cnt):
                             place_del[i][j - k - 1] = True
                     cnt = 1
-                    before = self.grid[i][j]
+                    before = grid[i][j]
             if cnt >= 3:
+                score += (cnt - 2) ** 2
                 for k in range(cnt):
-                    place_del[i][j - k - 1] = True
+                    place_del[i][self.N - k - 1] = True
         for i in range(self.N):
             cnt = 0
-            before = self.grid[0][i]
+            before = grid[0][i]
             for j in range(self.N):
-                if self.grid[j][i] == before and self.grid[i][j] != -1:
+                if grid[j][i] == before and grid[j][i] != -1:
                     cnt += 1
                 else:
                     if cnt >= 3:
+                        score += (cnt - 2) ** 2
                         for k in range(cnt):
                             place_del[j - k - 1][i] = True
                     cnt = 1
-                    before = self.grid[j][i]
+                    before = grid[j][i]
             if cnt >= 3:
+                score += (cnt - 2) ** 2
                 for k in range(cnt):
-                    place_del[j - k - 1][i] = True
+                    place_del[self.N - k - 1][i] = True
         new_grid = [[-1 for i in range(self.N)] for j in range(self.N)]
         for w in range(self.N):
             index = 0
             for h in range(self.N):
                 if place_del[h][w]:
                     continue
-                new_grid[index][w] = self.grid[h][w]
+                new_grid[index][w] = grid[h][w]
                 index += 1
-        self.grid = new_grid
+        return [new_grid, score]
 
     def get_input(self):
         for i in range(self.N):
