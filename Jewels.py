@@ -190,10 +190,17 @@ class Jewels():
                 want_c = self.want_grid[h][w] % self.C
                 for pos_index in index[want_c]:
                     pos_h, pos_w = pos_index
-                    if (self.want_grid[pos_h][pos_w] != -1 and self.grid[pos_h][pos_w] != (self.want_grid[pos_h][pos_w] % self.C)) or self.want_grid[pos_h][pos_w] == -1:
+                    if (self.want_grid[pos_h][pos_w] != -1 and self.grid[pos_h][pos_w] != (self.want_grid[pos_h][pos_w] % self.C) and self.grid[h][w] == self.want_grid[pos_h][pos_w]):
                         self.swap(pos_h, pos_w, h, w)
                         found = True
                         break
+                if not found:
+                    for pos_index in index[want_c]:
+                        pos_h, pos_w = pos_index
+                        if (self.want_grid[pos_h][pos_w] != -1 and self.grid[pos_h][pos_w] != (self.want_grid[pos_h][pos_w] % self.C)) or self.want_grid[pos_h][pos_w] == -1:
+                            self.swap(pos_h, pos_w, h, w)
+                            found = True
+                            break
                 # temp = True
                 # break
                 if found:
